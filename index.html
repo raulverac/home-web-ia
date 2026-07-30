@@ -19,13 +19,10 @@
 
     /* ── Main title ───────────────────────────── */
     .main-logo {
-      width: 64px;
-      height: 64px;
+      width: 64px; height: 64px;
       background: #fff;
       border-radius: 50%;
-      display: flex;
-      align-items: center;
-      justify-content: center;
+      display: flex; align-items: center; justify-content: center;
       flex-shrink: 0;
       box-shadow: 0 2px 12px rgba(0,0,0,.12);
     }
@@ -39,92 +36,62 @@
 
     /* ── Card ─────────────────────────────────── */
     .proj-card {
-      background: #ebebed;
-      border-radius: 18px;
-      overflow: hidden;
-      border: none;
-      box-shadow: 0 3px 20px rgba(0,0,0,.12);
+      border-radius: 18px; overflow: hidden;
+      border: none; box-shadow: 0 3px 20px rgba(0,0,0,.12);
       height: 100%;
     }
-
     .card-info {
       padding: 24px 22px 20px;
       background: #f7f8fa;
-      flex: 1;
     }
-
     .card-action {
       background: #fff;
       padding: 20px 22px 22px;
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-      gap: 10px;
+      display: flex; flex-direction: column;
+      align-items: center; gap: 10px;
     }
 
     /* ── Logo row ────────────────────────────── */
     .logo-row {
-      display: flex;
-      align-items: center;
-      gap: 10px;
-      margin-bottom: 18px;
+      display: flex; align-items: center;
+      gap: 10px; margin-bottom: 18px;
     }
     .logo-icon {
-      width: 42px;
-      height: 42px;
+      width: 42px; height: 42px;
       border: 2px solid #222;
       border-radius: 50%;
       background: #fff;
-      display: flex;
-      align-items: center;
-      justify-content: center;
+      display: flex; align-items: center; justify-content: center;
       flex-shrink: 0;
-      font-size: 18px;
-      color: #222;
     }
+    .logo-icon svg { width: 22px; height: 22px; }
     .brand     { font-size: 14px; font-weight: 700; color: #111; line-height: 1.2; margin-bottom: 0; }
     .brand-sub { font-size: 11px; color: #999; margin-bottom: 0; }
 
     /* ── Headline & subhead ─────────────────── */
     .proj-headline {
-      font-size: 20px;
-      font-weight: 800;
-      color: #111;
-      line-height: 1.2;
-      margin-bottom: 8px;
+      font-size: 20px; font-weight: 800;
+      color: #111; line-height: 1.2; margin-bottom: 8px;
     }
     .proj-subhead {
-      font-size: 12px;
-      color: #666;
-      line-height: 1.55;
-      margin-bottom: 0;
+      font-size: 12px; color: #666;
+      line-height: 1.55; margin-bottom: 0;
     }
 
     /* ── Action panel ─────────────────────────── */
     .rp-icon {
-      width: 52px;
-      height: 52px;
-      border: 2px solid #ddd;
-      border-radius: 50%;
+      width: 52px; height: 52px;
+      border: 2px solid #ddd; border-radius: 50%;
       background: #f7f7f7;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      font-size: 22px;
-      color: #333;
+      display: flex; align-items: center; justify-content: center;
+      font-size: 22px; color: #333;
     }
 
     .btn-ingresar {
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      width: 100%;
-      padding: 11px 20px;
-      border-radius: 9px;
-      font-size: 13.5px;
-      font-weight: 700;
-      color: #fff;
-      text-decoration: none;
+      display: flex; align-items: center; justify-content: center;
+      width: 100%; padding: 11px 20px;
+      border-radius: 9px; font-size: 13.5px; font-weight: 700;
+      color: #fff; text-decoration: none;
       transition: opacity .15s, transform .15s;
     }
     .btn-ingresar:hover { opacity: .87; transform: translateY(-1px); color: #fff; }
@@ -134,29 +101,11 @@
     .btn-orange { background: #e8501a; }
     .btn-teal   { background: #0d9488; }
 
-    /* AI badge (Base de Conocimientos) */
-    .ai-badge {
-      width: 42px; height: 42px;
-      background: #e8501a;
-      border-radius: 10px;
-      display: flex; align-items: center; justify-content: center;
-      flex-shrink: 0;
-      font-size: 13px; font-weight: 800; color: #fff; letter-spacing: -.5px;
-    }
-    .ai-badge-lg {
-      width: 52px; height: 52px;
-      background: #e8501a;
-      border-radius: 13px;
-      display: flex; align-items: center; justify-content: center;
-      font-size: 18px; font-weight: 800; color: #fff; letter-spacing: -.5px;
-    }
-
     .rp-note {
       font-size: 11px; color: #bbb;
       text-align: center; line-height: 1.4; margin-bottom: 0;
     }
 
-    /* ── Footer ───────────────────────────────── */
     footer { font-size: 11px; color: #aaa; text-align: center; }
   </style>
 </head>
@@ -189,14 +138,28 @@
     <div class="w-100" style="max-width:1160px;">
       <div class="row row-cols-1 row-cols-sm-2 row-cols-lg-3 row-cols-xl-4 g-3">
 
+        <!-- Shared logo SVG (inline, same for all cards) -->
+
         <!-- CARD 1: SEO Reports -->
         <div class="col">
           <div class="proj-card d-flex flex-column">
             <div class="card-info flex-grow-1">
               <div class="logo-row">
-                <div class="logo-icon"><i class="bi bi-graph-up-arrow"></i></div>
+                <div class="logo-icon">
+                  <svg viewBox="0 0 28 28" fill="none" stroke="#111" stroke-width="1.8" stroke-linecap="round">
+                    <circle cx="14" cy="14" r="11"/>
+                    <circle cx="14" cy="14" r="2.2" fill="#111" stroke="none"/>
+                    <circle cx="14" cy="7"  r="1.4" fill="#111" stroke="none"/>
+                    <circle cx="20" cy="18" r="1.4" fill="#111" stroke="none"/>
+                    <circle cx="8"  cy="18" r="1.4" fill="#111" stroke="none"/>
+                    <line x1="14" y1="11.8" x2="14" y2="8.4"/>
+                    <line x1="15.9" y1="15.1" x2="18.7" y2="17.1"/>
+                    <line x1="12.1" y1="15.1" x2="9.3"  y2="17.1"/>
+                    <circle cx="20" cy="8" r="2.5" fill="#22a047" stroke="none"/>
+                  </svg>
+                </div>
                 <div>
-                  <p class="brand">SEO <span class="accent-green">Reports</span></p>
+                  <p class="brand">Aceleración <span class="accent-green">IA</span></p>
                   <p class="brand-sub">by Mentalidad Web</p>
                 </div>
               </div>
@@ -216,9 +179,21 @@
           <div class="proj-card d-flex flex-column">
             <div class="card-info flex-grow-1">
               <div class="logo-row">
-                <div class="logo-icon"><i class="bi bi-layout-text-window-reverse"></i></div>
+                <div class="logo-icon">
+                  <svg viewBox="0 0 28 28" fill="none" stroke="#111" stroke-width="1.8" stroke-linecap="round">
+                    <circle cx="14" cy="14" r="11"/>
+                    <circle cx="14" cy="14" r="2.2" fill="#111" stroke="none"/>
+                    <circle cx="14" cy="7"  r="1.4" fill="#111" stroke="none"/>
+                    <circle cx="20" cy="18" r="1.4" fill="#111" stroke="none"/>
+                    <circle cx="8"  cy="18" r="1.4" fill="#111" stroke="none"/>
+                    <line x1="14" y1="11.8" x2="14" y2="8.4"/>
+                    <line x1="15.9" y1="15.1" x2="18.7" y2="17.1"/>
+                    <line x1="12.1" y1="15.1" x2="9.3"  y2="17.1"/>
+                    <circle cx="20" cy="8" r="2.5" fill="#22a047" stroke="none"/>
+                  </svg>
+                </div>
                 <div>
-                  <p class="brand">Landing<span class="accent-blue">Builder</span></p>
+                  <p class="brand">Aceleración <span class="accent-green">IA</span></p>
                   <p class="brand-sub">by Mentalidad Web</p>
                 </div>
               </div>
@@ -238,7 +213,19 @@
           <div class="proj-card d-flex flex-column">
             <div class="card-info flex-grow-1">
               <div class="logo-row">
-                <div class="logo-icon"><i class="bi bi-speedometer2"></i></div>
+                <div class="logo-icon">
+                  <svg viewBox="0 0 28 28" fill="none" stroke="#111" stroke-width="1.8" stroke-linecap="round">
+                    <circle cx="14" cy="14" r="11"/>
+                    <circle cx="14" cy="14" r="2.2" fill="#111" stroke="none"/>
+                    <circle cx="14" cy="7"  r="1.4" fill="#111" stroke="none"/>
+                    <circle cx="20" cy="18" r="1.4" fill="#111" stroke="none"/>
+                    <circle cx="8"  cy="18" r="1.4" fill="#111" stroke="none"/>
+                    <line x1="14" y1="11.8" x2="14" y2="8.4"/>
+                    <line x1="15.9" y1="15.1" x2="18.7" y2="17.1"/>
+                    <line x1="12.1" y1="15.1" x2="9.3"  y2="17.1"/>
+                    <circle cx="20" cy="8" r="2.5" fill="#22a047" stroke="none"/>
+                  </svg>
+                </div>
                 <div>
                   <p class="brand">Aceleración <span class="accent-green">IA</span></p>
                   <p class="brand-sub">by Mentalidad Web</p>
@@ -260,7 +247,19 @@
           <div class="proj-card d-flex flex-column">
             <div class="card-info flex-grow-1">
               <div class="logo-row">
-                <div class="logo-icon"><i class="bi bi-envelope-paper"></i></div>
+                <div class="logo-icon">
+                  <svg viewBox="0 0 28 28" fill="none" stroke="#111" stroke-width="1.8" stroke-linecap="round">
+                    <circle cx="14" cy="14" r="11"/>
+                    <circle cx="14" cy="14" r="2.2" fill="#111" stroke="none"/>
+                    <circle cx="14" cy="7"  r="1.4" fill="#111" stroke="none"/>
+                    <circle cx="20" cy="18" r="1.4" fill="#111" stroke="none"/>
+                    <circle cx="8"  cy="18" r="1.4" fill="#111" stroke="none"/>
+                    <line x1="14" y1="11.8" x2="14" y2="8.4"/>
+                    <line x1="15.9" y1="15.1" x2="18.7" y2="17.1"/>
+                    <line x1="12.1" y1="15.1" x2="9.3"  y2="17.1"/>
+                    <circle cx="20" cy="8" r="2.5" fill="#22a047" stroke="none"/>
+                  </svg>
+                </div>
                 <div>
                   <p class="brand">Aceleración <span class="accent-green">IA</span></p>
                   <p class="brand-sub">by Mentalidad Web</p>
@@ -282,9 +281,21 @@
           <div class="proj-card d-flex flex-column">
             <div class="card-info flex-grow-1">
               <div class="logo-row">
-                <div class="ai-badge">AI</div>
+                <div class="logo-icon">
+                  <svg viewBox="0 0 28 28" fill="none" stroke="#111" stroke-width="1.8" stroke-linecap="round">
+                    <circle cx="14" cy="14" r="11"/>
+                    <circle cx="14" cy="14" r="2.2" fill="#111" stroke="none"/>
+                    <circle cx="14" cy="7"  r="1.4" fill="#111" stroke="none"/>
+                    <circle cx="20" cy="18" r="1.4" fill="#111" stroke="none"/>
+                    <circle cx="8"  cy="18" r="1.4" fill="#111" stroke="none"/>
+                    <line x1="14" y1="11.8" x2="14" y2="8.4"/>
+                    <line x1="15.9" y1="15.1" x2="18.7" y2="17.1"/>
+                    <line x1="12.1" y1="15.1" x2="9.3"  y2="17.1"/>
+                    <circle cx="20" cy="8" r="2.5" fill="#22a047" stroke="none"/>
+                  </svg>
+                </div>
                 <div>
-                  <p class="brand">Base de <span class="accent-orange">Conocimientos</span></p>
+                  <p class="brand">Aceleración <span class="accent-green">IA</span></p>
                   <p class="brand-sub">by Mentalidad Web</p>
                 </div>
               </div>
@@ -292,7 +303,7 @@
               <p class="proj-subhead">Consulta y gestiona el conocimiento corporativo potenciado con IA.</p>
             </div>
             <div class="card-action">
-              <div class="ai-badge-lg"><i class="bi bi-database-fill-gear" style="font-size:20px;"></i></div>
+              <div class="rp-icon"><i class="bi bi-database-fill-gear"></i></div>
               <a class="btn-ingresar btn-orange" href="https://railwayragbaseconocimientos-production.up.railway.app/login" target="_blank" rel="noopener">Ingresar</a>
               <p class="rp-note">Solo cuentas <strong>@mentalidadweb.com</strong></p>
             </div>
@@ -304,9 +315,21 @@
           <div class="proj-card d-flex flex-column">
             <div class="card-info flex-grow-1">
               <div class="logo-row">
-                <div class="logo-icon" style="border-color:#22a047; color:#22a047;"><i class="bi bi-crosshair2"></i></div>
+                <div class="logo-icon">
+                  <svg viewBox="0 0 28 28" fill="none" stroke="#111" stroke-width="1.8" stroke-linecap="round">
+                    <circle cx="14" cy="14" r="11"/>
+                    <circle cx="14" cy="14" r="2.2" fill="#111" stroke="none"/>
+                    <circle cx="14" cy="7"  r="1.4" fill="#111" stroke="none"/>
+                    <circle cx="20" cy="18" r="1.4" fill="#111" stroke="none"/>
+                    <circle cx="8"  cy="18" r="1.4" fill="#111" stroke="none"/>
+                    <line x1="14" y1="11.8" x2="14" y2="8.4"/>
+                    <line x1="15.9" y1="15.1" x2="18.7" y2="17.1"/>
+                    <line x1="12.1" y1="15.1" x2="9.3"  y2="17.1"/>
+                    <circle cx="20" cy="8" r="2.5" fill="#22a047" stroke="none"/>
+                  </svg>
+                </div>
                 <div>
-                  <p class="brand">Multiplicador <span class="accent-green">Gráfico</span></p>
+                  <p class="brand">Aceleración <span class="accent-green">IA</span></p>
                   <p class="brand-sub">by Mentalidad Web</p>
                 </div>
               </div>
@@ -314,7 +337,7 @@
               <p class="proj-subhead">Adapta tus piezas publicitarias a múltiples formatos de forma automática con IA generativa.</p>
             </div>
             <div class="card-action">
-              <div class="rp-icon" style="border-color:#22a047; color:#22a047; font-size:24px;"><i class="bi bi-images"></i></div>
+              <div class="rp-icon"><i class="bi bi-images"></i></div>
               <a class="btn-ingresar btn-green" href="https://multiplicadorpiezasgraficas-production.up.railway.app/" target="_blank" rel="noopener">Ingresar</a>
               <p class="rp-note">Solo cuentas <strong>@mentalidadweb.com</strong></p>
             </div>
@@ -326,13 +349,25 @@
           <div class="proj-card d-flex flex-column">
             <div class="card-info flex-grow-1">
               <div class="logo-row">
-                <div class="logo-icon"><i class="bi bi-calendar-event"></i></div>
+                <div class="logo-icon">
+                  <svg viewBox="0 0 28 28" fill="none" stroke="#111" stroke-width="1.8" stroke-linecap="round">
+                    <circle cx="14" cy="14" r="11"/>
+                    <circle cx="14" cy="14" r="2.2" fill="#111" stroke="none"/>
+                    <circle cx="14" cy="7"  r="1.4" fill="#111" stroke="none"/>
+                    <circle cx="20" cy="18" r="1.4" fill="#111" stroke="none"/>
+                    <circle cx="8"  cy="18" r="1.4" fill="#111" stroke="none"/>
+                    <line x1="14" y1="11.8" x2="14" y2="8.4"/>
+                    <line x1="15.9" y1="15.1" x2="18.7" y2="17.1"/>
+                    <line x1="12.1" y1="15.1" x2="9.3"  y2="17.1"/>
+                    <circle cx="20" cy="8" r="2.5" fill="#22a047" stroke="none"/>
+                  </svg>
+                </div>
                 <div>
                   <p class="brand">Aceleración <span class="accent-green">IA</span></p>
                   <p class="brand-sub">by Mentalidad Web</p>
                 </div>
               </div>
-              <h2 class="proj-headline">Reporte de<br>eventos 360</h2>
+              <h2 class="proj-headline">Reporte de<br>Eventos 360</h2>
               <p class="proj-subhead">Generación mensual de reportes de eventos 360 para clientes de Mentalidad Web.</p>
             </div>
             <div class="card-action">
