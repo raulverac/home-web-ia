@@ -4,385 +4,241 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <meta name="robots" content="noindex, nofollow" />
-  <title>Mentalidad Web — Proyectos IA</title>
+  <title>Hub de Inteligencia Artificial — Mentalidad Web</title>
 
   <!-- Bootstrap 5 -->
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
-  <!-- Bootstrap Icons -->
-  <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css" rel="stylesheet">
 
   <style>
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+
     body {
-      background: #eceff5;
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+      background: #d8dce6;
       min-height: 100vh;
-      padding: 36px 20px 52px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      padding: 24px 16px;
     }
 
-    /* ── Main title ───────────────────────────── */
-    .main-logo {
-      width: 64px; height: 64px;
-      background: #fff;
-      border-radius: 50%;
-      display: flex; align-items: center; justify-content: center;
-      flex-shrink: 0;
-      box-shadow: 0 2px 12px rgba(0,0,0,.12);
-    }
-    .main-logo svg { width: 40px; height: 40px; }
-    .main-heading { font-size: 28px; font-weight: 800; color: #111; line-height: 1.15; }
-    .main-sub     { font-size: 13px; color: #999; margin-top: 2px; margin-bottom: 0; }
-
-    .accent-green  { color: #22a047; }
-    .accent-blue   { color: #4361ee; }
-    .accent-orange { color: #e8501a; }
-
-    /* ── Card ─────────────────────────────────── */
-    .proj-card {
-      border-radius: 18px; overflow: hidden;
-      border: none; box-shadow: 0 3px 20px rgba(0,0,0,.12);
-      height: 100%;
-    }
-    .card-info {
-      padding: 24px 22px 20px;
-      background: #f7f8fa;
-    }
-    .card-action {
-      background: #fff;
-      padding: 20px 22px 22px;
-      display: flex; flex-direction: column;
-      align-items: center; gap: 10px;
+    /* ── Main card ────────────────────────────── */
+    .login-card {
+      display: flex;
+      width: 100%;
+      max-width: 900px;
+      border-radius: 22px;
+      overflow: hidden;
+      box-shadow: 0 6px 40px rgba(0,0,0,.13);
     }
 
-    /* ── Logo row ────────────────────────────── */
+    /* ── Left panel ───────────────────────────── */
+    .panel-left {
+      flex: 1;
+      background: #ebedf2;
+      padding: 52px 48px;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+    }
+
     .logo-row {
-      display: flex; align-items: center;
-      gap: 10px; margin-bottom: 18px;
+      display: flex;
+      align-items: center;
+      gap: 14px;
+      margin-bottom: 52px;
     }
-    .logo-icon {
-      width: 42px; height: 42px;
-      border: 2px solid #222;
+    .logo-circle {
+      width: 58px;
+      height: 58px;
+      border: 2.5px solid #222;
       border-radius: 50%;
       background: #fff;
-      display: flex; align-items: center; justify-content: center;
+      display: flex;
+      align-items: center;
+      justify-content: center;
       flex-shrink: 0;
     }
-    .logo-icon svg { width: 22px; height: 22px; }
-    .brand     { font-size: 14px; font-weight: 700; color: #111; line-height: 1.2; margin-bottom: 0; }
-    .brand-sub { font-size: 11px; color: #999; margin-bottom: 0; }
-
-    /* ── Headline & subhead ─────────────────── */
-    .proj-headline {
-      font-size: 20px; font-weight: 800;
-      color: #111; line-height: 1.2; margin-bottom: 8px;
+    .logo-circle svg { width: 30px; height: 30px; }
+    .brand-name {
+      font-size: 22px;
+      font-weight: 800;
+      color: #111;
+      line-height: 1.15;
     }
-    .proj-subhead {
-      font-size: 12px; color: #666;
-      line-height: 1.55; margin-bottom: 0;
-    }
+    .brand-name span { color: #22a047; }
+    .brand-sub { font-size: 12px; color: #999; margin-top: 1px; }
 
-    /* ── Action panel ─────────────────────────── */
-    .rp-icon {
-      width: 52px; height: 52px;
-      border: 2px solid #ddd; border-radius: 50%;
-      background: #f7f7f7;
-      display: flex; align-items: center; justify-content: center;
-      font-size: 22px; color: #333;
+    .left-title {
+      font-size: 32px;
+      font-weight: 800;
+      color: #111;
+      line-height: 1.2;
+      margin-bottom: 16px;
     }
-
-    .btn-ingresar {
-      display: flex; align-items: center; justify-content: center;
-      width: 100%; padding: 11px 20px;
-      border-radius: 9px; font-size: 13.5px; font-weight: 700;
-      color: #fff; text-decoration: none;
-      transition: opacity .15s, transform .15s;
-    }
-    .btn-ingresar:hover { opacity: .87; transform: translateY(-1px); color: #fff; }
-    .btn-dark   { background: #13131f; }
-    .btn-blue   { background: #4361ee; }
-    .btn-green  { background: #22a047; }
-    .btn-orange { background: #e8501a; }
-    .btn-teal   { background: #0d9488; }
-
-    .rp-note {
-      font-size: 11px; color: #bbb;
-      text-align: center; line-height: 1.4; margin-bottom: 0;
+    .left-desc {
+      font-size: 14px;
+      color: #666;
+      line-height: 1.65;
+      max-width: 360px;
     }
 
-    footer { font-size: 11px; color: #aaa; text-align: center; }
+    /* ── Right panel ──────────────────────────── */
+    .panel-right {
+      width: 400px;
+      flex-shrink: 0;
+      background: #fff;
+      padding: 52px 44px;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      gap: 0;
+    }
+
+    .right-icon {
+      width: 62px;
+      height: 62px;
+      border: 2px solid #ddd;
+      border-radius: 50%;
+      background: #f9f9f9;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      margin-bottom: 20px;
+    }
+    .right-icon svg { width: 32px; height: 32px; }
+
+    .right-title {
+      font-size: 26px;
+      font-weight: 800;
+      color: #111;
+      margin-bottom: 8px;
+      text-align: center;
+    }
+    .right-sub {
+      font-size: 13px;
+      color: #888;
+      text-align: center;
+      margin-bottom: 28px;
+    }
+
+    /* Google button */
+    .btn-google {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 10px;
+      width: 100%;
+      padding: 14px 20px;
+      border: 1.5px solid #ddd;
+      border-radius: 10px;
+      background: #fff;
+      font-size: 15px;
+      font-weight: 600;
+      color: #111;
+      text-decoration: none;
+      transition: box-shadow .15s, transform .15s;
+      margin-bottom: 20px;
+    }
+    .btn-google:hover {
+      box-shadow: 0 4px 16px rgba(0,0,0,.1);
+      transform: translateY(-1px);
+      color: #111;
+    }
+
+    /* Google G icon */
+    .g-icon {
+      width: 20px;
+      height: 20px;
+      flex-shrink: 0;
+    }
+
+    .access-note {
+      font-size: 12px;
+      color: #aaa;
+      text-align: center;
+      margin-bottom: 32px;
+    }
+
+    .right-footer {
+      font-size: 11px;
+      color: #ccc;
+      text-align: center;
+    }
+
+    /* ── Responsive ───────────────────────────── */
+    @media (max-width: 700px) {
+      .login-card { flex-direction: column; }
+      .panel-right { width: 100%; padding: 36px 28px; }
+      .panel-left  { padding: 36px 28px; }
+      .left-title  { font-size: 26px; }
+    }
   </style>
 </head>
 <body>
 
-  <div class="d-flex flex-column align-items-center gap-3">
+  <div class="login-card">
 
-    <!-- ── Main title ── -->
-    <div class="d-flex align-items-center gap-3 w-100" style="max-width:1160px;">
-      <div class="main-logo">
-        <svg viewBox="0 0 36 36" fill="none" stroke="#111" stroke-width="2" stroke-linecap="round">
-          <circle cx="18" cy="18" r="14"/>
-          <circle cx="18" cy="18" r="2.8" fill="#111" stroke="none"/>
-          <circle cx="18" cy="9"  r="1.8" fill="#111" stroke="none"/>
-          <circle cx="26" cy="23" r="1.8" fill="#111" stroke="none"/>
-          <circle cx="10" cy="23" r="1.8" fill="#111" stroke="none"/>
-          <line x1="18" y1="15.2" x2="18" y2="10.8"/>
-          <line x1="20.4" y1="19.5" x2="24.3" y2="21.8"/>
-          <line x1="15.6" y1="19.5" x2="11.7" y2="21.8"/>
-          <circle cx="26" cy="10" r="3.2" fill="#22a047" stroke="none"/>
+    <!-- ── Left panel ── -->
+    <div class="panel-left">
+      <div class="logo-row">
+        <div class="logo-circle">
+          <svg viewBox="0 0 28 28" fill="none" stroke="#111" stroke-width="1.8" stroke-linecap="round">
+            <circle cx="14" cy="14" r="11"/>
+            <circle cx="14" cy="14" r="2.2" fill="#111" stroke="none"/>
+            <circle cx="14" cy="7"  r="1.4" fill="#111" stroke="none"/>
+            <circle cx="20" cy="18" r="1.4" fill="#111" stroke="none"/>
+            <circle cx="8"  cy="18" r="1.4" fill="#111" stroke="none"/>
+            <line x1="14" y1="11.8" x2="14" y2="8.4"/>
+            <line x1="15.9" y1="15.1" x2="18.7" y2="17.1"/>
+            <line x1="12.1" y1="15.1" x2="9.3"  y2="17.1"/>
+            <circle cx="20" cy="8" r="2.5" fill="#22a047" stroke="none"/>
+          </svg>
+        </div>
+        <div>
+          <div class="brand-name">Aceleración <span>IA</span></div>
+          <div class="brand-sub">by Mentalidad Web</div>
+        </div>
+      </div>
+
+      <h1 class="left-title">Hub de Inteligencia<br>Artificial</h1>
+      <p class="left-desc">Explora todas las aplicaciones creadas por el equipo de Aceleración IA disponibles para Mentalidad Web. Diseñadas para optimizar flujos de trabajo, automatizar procesos y ofrecer mejores resultados en menos tiempo.</p>
+    </div>
+
+    <!-- ── Right panel ── -->
+    <div class="panel-right">
+      <div class="right-icon">
+        <svg viewBox="0 0 28 28" fill="none" stroke="#111" stroke-width="1.8" stroke-linecap="round">
+          <circle cx="14" cy="14" r="11"/>
+          <circle cx="14" cy="14" r="2.2" fill="#111" stroke="none"/>
+          <circle cx="14" cy="7"  r="1.4" fill="#111" stroke="none"/>
+          <circle cx="20" cy="18" r="1.4" fill="#111" stroke="none"/>
+          <circle cx="8"  cy="18" r="1.4" fill="#111" stroke="none"/>
+          <line x1="14" y1="11.8" x2="14" y2="8.4"/>
+          <line x1="15.9" y1="15.1" x2="18.7" y2="17.1"/>
+          <line x1="12.1" y1="15.1" x2="9.3"  y2="17.1"/>
+          <circle cx="20" cy="8" r="2.5" fill="#22a047" stroke="none"/>
         </svg>
       </div>
-      <div>
-        <h1 class="main-heading">Equipo de Aceleración <span class="accent-green">IA</span></h1>
-        <p class="main-sub">by Mentalidad Web</p>
-      </div>
+
+      <h2 class="right-title">Iniciar sesión</h2>
+      <p class="right-sub">Ingresa con tu cuenta corporativa de Google</p>
+
+      <a class="btn-google" href="apps.html">
+        <!-- Google G SVG -->
+        <svg class="g-icon" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+          <path d="M22.56 12.25c0-.78-.07-1.53-.2-2.25H12v4.26h5.92c-.26 1.37-1.04 2.53-2.21 3.31v2.77h3.57c2.08-1.92 3.28-4.74 3.28-8.09z" fill="#4285F4"/>
+          <path d="M12 23c2.97 0 5.46-.98 7.28-2.66l-3.57-2.77c-.98.66-2.23 1.06-3.71 1.06-2.86 0-5.29-1.93-6.16-4.53H2.18v2.84C3.99 20.53 7.7 23 12 23z" fill="#34A853"/>
+          <path d="M5.84 14.09c-.22-.66-.35-1.36-.35-2.09s.13-1.43.35-2.09V7.07H2.18C1.43 8.55 1 10.22 1 12s.43 3.45 1.18 4.93l3.66-2.84z" fill="#FBBC05"/>
+          <path d="M12 5.38c1.62 0 3.06.56 4.21 1.64l3.15-3.15C17.45 2.09 14.97 1 12 1 7.7 1 3.99 3.47 2.18 7.07l3.66 2.84c.87-2.6 3.3-4.53 6.16-4.53z" fill="#EA4335"/>
+        </svg>
+        Iniciar sesión con Google
+      </a>
+
+      <p class="access-note">Solo cuentas <strong>@mentalidadweb.com</strong> tienen acceso.</p>
+      <p class="right-footer">© 2026 Aceleración IA · Mentalidad Web</p>
     </div>
-
-    <!-- ── Grid ── -->
-    <div class="w-100" style="max-width:1160px;">
-      <div class="row row-cols-1 row-cols-sm-2 row-cols-lg-3 row-cols-xl-4 g-3">
-
-        <!-- CARD 1: Base de Conocimientos -->
-        <div class="col">
-          <div class="proj-card d-flex flex-column">
-            <div class="card-info flex-grow-1">
-              <div class="logo-row">
-                <div class="logo-icon">
-                  <svg viewBox="0 0 28 28" fill="none" stroke="#111" stroke-width="1.8" stroke-linecap="round">
-                    <circle cx="14" cy="14" r="11"/><circle cx="14" cy="14" r="2.2" fill="#111" stroke="none"/>
-                    <circle cx="14" cy="7" r="1.4" fill="#111" stroke="none"/><circle cx="20" cy="18" r="1.4" fill="#111" stroke="none"/>
-                    <circle cx="8" cy="18" r="1.4" fill="#111" stroke="none"/><line x1="14" y1="11.8" x2="14" y2="8.4"/>
-                    <line x1="15.9" y1="15.1" x2="18.7" y2="17.1"/><line x1="12.1" y1="15.1" x2="9.3" y2="17.1"/>
-                    <circle cx="20" cy="8" r="2.5" fill="#22a047" stroke="none"/>
-                  </svg>
-                </div>
-                <div>
-                  <p class="brand">Aceleración <span class="accent-green">IA</span></p>
-                  <p class="brand-sub">by Mentalidad Web</p>
-                </div>
-              </div>
-              <h2 class="proj-headline">Base de<br>Conocimientos</h2>
-              <p class="proj-subhead">Consulta y gestiona el conocimiento corporativo potenciado con IA.</p>
-            </div>
-            <div class="card-action">
-              <div class="rp-icon"><i class="bi bi-database-fill-gear"></i></div>
-              <a class="btn-ingresar btn-orange" href="https://railwayragbaseconocimientos-production.up.railway.app/login" target="_blank" rel="noopener">Ingresar</a>
-              <p class="rp-note">Solo cuentas <strong>@mentalidadweb.com</strong></p>
-            </div>
-          </div>
-        </div>
-
-        <!-- CARD 2: Reporte de Eventos 360 -->
-        <div class="col">
-          <div class="proj-card d-flex flex-column">
-            <div class="card-info flex-grow-1">
-              <div class="logo-row">
-                <div class="logo-icon">
-                  <svg viewBox="0 0 28 28" fill="none" stroke="#111" stroke-width="1.8" stroke-linecap="round">
-                    <circle cx="14" cy="14" r="11"/><circle cx="14" cy="14" r="2.2" fill="#111" stroke="none"/>
-                    <circle cx="14" cy="7" r="1.4" fill="#111" stroke="none"/><circle cx="20" cy="18" r="1.4" fill="#111" stroke="none"/>
-                    <circle cx="8" cy="18" r="1.4" fill="#111" stroke="none"/><line x1="14" y1="11.8" x2="14" y2="8.4"/>
-                    <line x1="15.9" y1="15.1" x2="18.7" y2="17.1"/><line x1="12.1" y1="15.1" x2="9.3" y2="17.1"/>
-                    <circle cx="20" cy="8" r="2.5" fill="#22a047" stroke="none"/>
-                  </svg>
-                </div>
-                <div>
-                  <p class="brand">Aceleración <span class="accent-green">IA</span></p>
-                  <p class="brand-sub">by Mentalidad Web</p>
-                </div>
-              </div>
-              <h2 class="proj-headline">Reporte de<br>Eventos 360</h2>
-              <p class="proj-subhead">Generación mensual de reportes de eventos 360 para clientes de Mentalidad Web.</p>
-            </div>
-            <div class="card-action">
-              <div class="rp-icon"><i class="bi bi-bar-chart-steps"></i></div>
-              <a class="btn-ingresar btn-green" href="https://reporte-eventos-360-production.up.railway.app/" target="_blank" rel="noopener">Ingresar</a>
-              <p class="rp-note">Solo cuentas <strong>@mentalidadweb.com</strong></p>
-            </div>
-          </div>
-        </div>
-
-        <!-- CARD 3: Monitoreo SEO -->
-        <div class="col">
-          <div class="proj-card d-flex flex-column">
-            <div class="card-info flex-grow-1">
-              <div class="logo-row">
-                <div class="logo-icon">
-                  <svg viewBox="0 0 28 28" fill="none" stroke="#111" stroke-width="1.8" stroke-linecap="round">
-                    <circle cx="14" cy="14" r="11"/><circle cx="14" cy="14" r="2.2" fill="#111" stroke="none"/>
-                    <circle cx="14" cy="7" r="1.4" fill="#111" stroke="none"/><circle cx="20" cy="18" r="1.4" fill="#111" stroke="none"/>
-                    <circle cx="8" cy="18" r="1.4" fill="#111" stroke="none"/><line x1="14" y1="11.8" x2="14" y2="8.4"/>
-                    <line x1="15.9" y1="15.1" x2="18.7" y2="17.1"/><line x1="12.1" y1="15.1" x2="9.3" y2="17.1"/>
-                    <circle cx="20" cy="8" r="2.5" fill="#22a047" stroke="none"/>
-                  </svg>
-                </div>
-                <div>
-                  <p class="brand">Aceleración <span class="accent-green">IA</span></p>
-                  <p class="brand-sub">by Mentalidad Web</p>
-                </div>
-              </div>
-              <h2 class="proj-headline">Sistema de<br>Monitoreo SEO</h2>
-              <p class="proj-subhead">Centraliza el análisis SEO de todos tus clientes en un solo lugar, con IA.</p>
-            </div>
-            <div class="card-action">
-              <div class="rp-icon"><i class="bi bi-activity"></i></div>
-              <a class="btn-ingresar btn-green" href="https://railwaysistemaseosalud-production.up.railway.app/" target="_blank" rel="noopener">Ingresar</a>
-              <p class="rp-note">Solo cuentas <strong>@mentalidadweb.com</strong></p>
-            </div>
-          </div>
-        </div>
-
-        <!-- CARD 4: Multiplicador Gráfico -->
-        <div class="col">
-          <div class="proj-card d-flex flex-column">
-            <div class="card-info flex-grow-1">
-              <div class="logo-row">
-                <div class="logo-icon">
-                  <svg viewBox="0 0 28 28" fill="none" stroke="#111" stroke-width="1.8" stroke-linecap="round">
-                    <circle cx="14" cy="14" r="11"/><circle cx="14" cy="14" r="2.2" fill="#111" stroke="none"/>
-                    <circle cx="14" cy="7" r="1.4" fill="#111" stroke="none"/><circle cx="20" cy="18" r="1.4" fill="#111" stroke="none"/>
-                    <circle cx="8" cy="18" r="1.4" fill="#111" stroke="none"/><line x1="14" y1="11.8" x2="14" y2="8.4"/>
-                    <line x1="15.9" y1="15.1" x2="18.7" y2="17.1"/><line x1="12.1" y1="15.1" x2="9.3" y2="17.1"/>
-                    <circle cx="20" cy="8" r="2.5" fill="#22a047" stroke="none"/>
-                  </svg>
-                </div>
-                <div>
-                  <p class="brand">Aceleración <span class="accent-green">IA</span></p>
-                  <p class="brand-sub">by Mentalidad Web</p>
-                </div>
-              </div>
-              <h2 class="proj-headline">Multiplicador de<br>Piezas Gráficas</h2>
-              <p class="proj-subhead">Adapta tus piezas publicitarias a múltiples formatos de forma automática con IA generativa.</p>
-            </div>
-            <div class="card-action">
-              <div class="rp-icon"><i class="bi bi-images"></i></div>
-              <a class="btn-ingresar btn-green" href="https://multiplicadorpiezasgraficas-production.up.railway.app/" target="_blank" rel="noopener">Ingresar</a>
-              <p class="rp-note">Solo cuentas <strong>@mentalidadweb.com</strong></p>
-            </div>
-          </div>
-        </div>
-
-        <!-- CARD 5: Constructor de Landings Pro -->
-        <div class="col">
-          <div class="proj-card d-flex flex-column">
-            <div class="card-info flex-grow-1">
-              <div class="logo-row">
-                <div class="logo-icon">
-                  <svg viewBox="0 0 28 28" fill="none" stroke="#111" stroke-width="1.8" stroke-linecap="round">
-                    <circle cx="14" cy="14" r="11"/><circle cx="14" cy="14" r="2.2" fill="#111" stroke="none"/>
-                    <circle cx="14" cy="7" r="1.4" fill="#111" stroke="none"/><circle cx="20" cy="18" r="1.4" fill="#111" stroke="none"/>
-                    <circle cx="8" cy="18" r="1.4" fill="#111" stroke="none"/><line x1="14" y1="11.8" x2="14" y2="8.4"/>
-                    <line x1="15.9" y1="15.1" x2="18.7" y2="17.1"/><line x1="12.1" y1="15.1" x2="9.3" y2="17.1"/>
-                    <circle cx="20" cy="8" r="2.5" fill="#22a047" stroke="none"/>
-                  </svg>
-                </div>
-                <div>
-                  <p class="brand">Aceleración <span class="accent-green">IA</span></p>
-                  <p class="brand-sub">by Mentalidad Web</p>
-                </div>
-              </div>
-              <h2 class="proj-headline">Constructor de<br>Landings Pro</h2>
-              <p class="proj-subhead">Crea, edita y publica landing pages con editor visual y exportación responsive.</p>
-            </div>
-            <div class="card-action">
-              <div class="rp-icon"><i class="bi bi-pencil-square"></i></div>
-              <a class="btn-ingresar btn-blue" href="https://landingcreator10-production.up.railway.app/" target="_blank" rel="noopener">Ingresar</a>
-              <p class="rp-note">Solo cuentas <strong>@mentalidadweb.com</strong></p>
-            </div>
-          </div>
-        </div>
-
-        <!-- CARD 6: Generador de Reportes SEO -->
-        <div class="col">
-          <div class="proj-card d-flex flex-column">
-            <div class="card-info flex-grow-1">
-              <div class="logo-row">
-                <div class="logo-icon">
-                  <svg viewBox="0 0 28 28" fill="none" stroke="#111" stroke-width="1.8" stroke-linecap="round">
-                    <circle cx="14" cy="14" r="11"/><circle cx="14" cy="14" r="2.2" fill="#111" stroke="none"/>
-                    <circle cx="14" cy="7" r="1.4" fill="#111" stroke="none"/><circle cx="20" cy="18" r="1.4" fill="#111" stroke="none"/>
-                    <circle cx="8" cy="18" r="1.4" fill="#111" stroke="none"/><line x1="14" y1="11.8" x2="14" y2="8.4"/>
-                    <line x1="15.9" y1="15.1" x2="18.7" y2="17.1"/><line x1="12.1" y1="15.1" x2="9.3" y2="17.1"/>
-                    <circle cx="20" cy="8" r="2.5" fill="#22a047" stroke="none"/>
-                  </svg>
-                </div>
-                <div>
-                  <p class="brand">Aceleración <span class="accent-green">IA</span></p>
-                  <p class="brand-sub">by Mentalidad Web</p>
-                </div>
-              </div>
-              <h2 class="proj-headline">Generador de<br>Reportes SEO</h2>
-              <p class="proj-subhead">Reportes PDF profesionales con datos reales de WebCEO y análisis IA.</p>
-            </div>
-            <div class="card-action">
-              <div class="rp-icon"><i class="bi bi-file-earmark-bar-graph-fill"></i></div>
-              <a class="btn-ingresar btn-dark" href="https://seo-report-comercial-production.up.railway.app/" target="_blank" rel="noopener">Ingresar</a>
-              <p class="rp-note">Solo cuentas <strong>@mentalidadweb.com</strong></p>
-            </div>
-          </div>
-        </div>
-
-        <!-- CARD 7: Newsletter Studio -->
-        <div class="col">
-          <div class="proj-card d-flex flex-column">
-            <div class="card-info flex-grow-1">
-              <div class="logo-row">
-                <div class="logo-icon">
-                  <svg viewBox="0 0 28 28" fill="none" stroke="#111" stroke-width="1.8" stroke-linecap="round">
-                    <circle cx="14" cy="14" r="11"/><circle cx="14" cy="14" r="2.2" fill="#111" stroke="none"/>
-                    <circle cx="14" cy="7" r="1.4" fill="#111" stroke="none"/><circle cx="20" cy="18" r="1.4" fill="#111" stroke="none"/>
-                    <circle cx="8" cy="18" r="1.4" fill="#111" stroke="none"/><line x1="14" y1="11.8" x2="14" y2="8.4"/>
-                    <line x1="15.9" y1="15.1" x2="18.7" y2="17.1"/><line x1="12.1" y1="15.1" x2="9.3" y2="17.1"/>
-                    <circle cx="20" cy="8" r="2.5" fill="#22a047" stroke="none"/>
-                  </svg>
-                </div>
-                <div>
-                  <p class="brand">Aceleración <span class="accent-green">IA</span></p>
-                  <p class="brand-sub">by Mentalidad Web</p>
-                </div>
-              </div>
-              <h2 class="proj-headline">Newsletter<br>Studio</h2>
-              <p class="proj-subhead">Genera, previsualiza y envía newsletters de datos potenciado con IA.</p>
-            </div>
-            <div class="card-action">
-              <div class="rp-icon"><i class="bi bi-send-fill"></i></div>
-              <a class="btn-ingresar btn-teal" href="https://railwaynewslleterstudio-production.up.railway.app/login" target="_blank" rel="noopener">Ingresar</a>
-              <p class="rp-note">Solo cuentas <strong>@mentalidadweb.com</strong></p>
-            </div>
-          </div>
-        </div>
-
-        <!-- CARD 8: ETL Sheets → BigQuery -->
-        <div class="col">
-          <div class="proj-card d-flex flex-column">
-            <div class="card-info flex-grow-1">
-              <div class="logo-row">
-                <div class="logo-icon">
-                  <svg viewBox="0 0 28 28" fill="none" stroke="#111" stroke-width="1.8" stroke-linecap="round">
-                    <circle cx="14" cy="14" r="11"/><circle cx="14" cy="14" r="2.2" fill="#111" stroke="none"/>
-                    <circle cx="14" cy="7" r="1.4" fill="#111" stroke="none"/><circle cx="20" cy="18" r="1.4" fill="#111" stroke="none"/>
-                    <circle cx="8" cy="18" r="1.4" fill="#111" stroke="none"/><line x1="14" y1="11.8" x2="14" y2="8.4"/>
-                    <line x1="15.9" y1="15.1" x2="18.7" y2="17.1"/><line x1="12.1" y1="15.1" x2="9.3" y2="17.1"/>
-                    <circle cx="20" cy="8" r="2.5" fill="#22a047" stroke="none"/>
-                  </svg>
-                </div>
-                <div>
-                  <p class="brand">Aceleración <span class="accent-green">IA</span></p>
-                  <p class="brand-sub">by Mentalidad Web</p>
-                </div>
-              </div>
-              <h2 class="proj-headline">ETL Sheets<br>→ BigQuery</h2>
-              <p class="proj-subhead">Centralizá la carga de datos de tus Google Sheets a BigQuery con jobs automatizados y trazabilidad completa.</p>
-            </div>
-            <div class="card-action">
-              <div class="rp-icon"><i class="bi bi-cloud-upload-fill"></i></div>
-              <a class="btn-ingresar btn-green" href="https://railwaygooglesheettobigquery-production.up.railway.app/login" target="_blank" rel="noopener">Ingresar</a>
-              <p class="rp-note">Solo cuentas <strong>@mentalidadweb.com</strong></p>
-            </div>
-          </div>
-        </div>
-
-      </div>
-    </div>
-
-    <footer class="mt-3">© 2026 Aceleración IA · Mentalidad Web</footer>
 
   </div>
 
