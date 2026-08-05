@@ -1,5 +1,7 @@
 FROM nginx:alpine
-COPY index.html /usr/share/nginx/html/index.html
-COPY apps.html  /usr/share/nginx/html/apps.html
+COPY index.html           /usr/share/nginx/html/index.html
+COPY apps.html            /usr/share/nginx/html/apps.html
+COPY docker-entrypoint.sh /docker-entrypoint.sh
+RUN chmod +x /docker-entrypoint.sh
 EXPOSE 80
-CMD ["nginx", "-g", "daemon off;"]
+ENTRYPOINT ["/docker-entrypoint.sh"]
